@@ -14,9 +14,9 @@ if 'messages' not in st.session_state:
 
 # 角色描述
 ROLE_DESCRIPTIONS = {
-    "kids_teacher": "儿童编程教师 👶",
-    "programmer": "资深程序员 💻",
-    "professor": "大学教授 📚"
+    "beginner": "新手上路",
+    "intermediate": "中级编程助手",
+    "advanced": "高级编程助手"
 }
 
 def send_message(message, role):
@@ -33,7 +33,7 @@ def send_message(message, role):
         return f"Error: {str(e)}"
 
 # 页面标题
-st.title("💬 多角色聊天机器人")
+st.title("💬 编程小助手")
 
 # 角色选择
 selected_role = st.selectbox(
@@ -43,12 +43,12 @@ selected_role = st.selectbox(
 )
 
 # 显示当前角色的描述
-if selected_role == "kids_teacher":
-    st.info("👶 我是一位善于用简单语言和生动例子教学的儿童编程老师！")
-elif selected_role == "programmer":
-    st.info("💻 我是一位经验丰富的程序员，可以提供专业的技术建议！")
+if selected_role == "beginner":
+    st.info("我是一位善于用简单易懂语言解释概念的初级编程老师！")
+elif selected_role == "intermediate":
+    st.info("💻 我可以给出比较专业的解释并附上使用范例！")
 else:
-    st.info("📚 我是一位从理论角度解释问题的大学教授！")
+    st.info("📚 我是高级编程小助手！")
 
 # 显示聊天历史
 for message in st.session_state.messages:
